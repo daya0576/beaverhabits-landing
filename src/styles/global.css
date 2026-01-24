@@ -9,6 +9,6 @@
   }
 
   body {
-    @apply bg-[rgb(var(--color-background))] text-gray-100;
+    @apply bg-gradient-to-b from-[rgb(var(--color-background))] via-[rgb(15_15_15)] to-[rgb(var(--color-background))] text-gray-100;
   }
 }
