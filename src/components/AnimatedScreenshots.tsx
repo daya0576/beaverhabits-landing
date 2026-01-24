@@ -44,15 +44,15 @@ export default function AnimatedScreenshots() {
 
   const screenshots = [
     {
-      src: '/pricing/screenshots/screenshot-2.jpg',
+      src: '/pricing/statics/screenshot-2.jpg',
       alt: 'Habit calendar view with streak visualization',
     },
     {
-      src: '/pricing/screenshots/screenshot-1.jpg',
+      src: '/pricing/statics/screenshot-1.jpg',
       alt: 'Habit list view showing daily tracking',
     },
     {
-      src: '/pricing/screenshots/screenshot-3.jpg',
+      src: '/pricing/statics/screenshot-3.jpg',
       alt: 'Habit statistics and progress tracking',
     },
   ];
@@ -125,7 +125,7 @@ export default function AnimatedScreenshots() {
                 objectPosition: 'center',
                 marginTop: '-12.5%',
               }}
-              loading="eager"
+              loading="lazy"
             />
           </figure>
         );
