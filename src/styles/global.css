@@ -8,7 +8,11 @@
     --color-surface-hover: 38 38 38;
   }
 
+  html {
+    @apply h-full bg-[rgb(10_10_10)];
+  }
+
   body {
-    @apply bg-gradient-to-b from-[rgb(var(--color-background))] via-[rgb(15_15_15)] to-[rgb(var(--color-background))] text-gray-100;
+    @apply h-full min-h-screen bg-gradient-to-b from-[rgb(var(--color-background))] via-[rgb(15_15_15)] to-[rgb(var(--color-background))] text-gray-100 bg-fixed;
   }
 }
