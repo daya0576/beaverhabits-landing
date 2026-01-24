@@ -6,6 +6,7 @@ interface PricingCardProps {
   buttonText: string;
   buttonLink: string;
   isPro?: boolean;
+  priceId?: string;
 }
 
 export default function PricingCard({
@@ -16,7 +17,33 @@ export default function PricingCard({
   buttonText,
   buttonLink,
   isPro = false,
+  priceId,
 }: PricingCardProps) {
+  const handleCheckout = async () => {
+    if (!isPro || !priceId) {
+      window.location.href = buttonLink;
+      return;
+    }
+
+    try {
+      // Get email from URL params or prompt user
+      const params = new URLSearchParams(window.location.search);
+      const email = params.get('email') || '';
+
+      // Trigger Paddle checkout
+      (window as any).Paddle?.Checkout.open({
+        items: [{ priceId, quantity: 1 }],
+        customer: email ? { email } : {},
+        settings: {
+          theme: 'dark',
+        },
+      });
+    } catch (error) {
+      console.error('Checkout error:', error);
+      window.location.href = buttonLink;
+    }
+  };
+
   return (
     <div className="bg-[rgb(var(--color-surface))] rounded-lg p-8 border border-gray-800 hover:border-gray-700 transition-colors">
       <h3 className="text-2xl font-bold mb-2">
@@ -45,16 +72,16 @@ export default function PricingCard({
         ))}
       </ul>
 
-      <a
-        href={buttonLink}
-        className={`block w-full text-center py-3 px-6 rounded-lg font-semibold transition-colors ${
+      <button
+        onClick={handleCheckout}
+        className={`w-full text-center py-3 px-6 rounded-lg font-semibold transition-colors ${
           isPro
             ? 'bg-transparent border border-blue-500 text-blue-400 hover:bg-blue-500/10'
             : 'bg-blue-500 text-white hover:bg-blue-600'
         }`}
       >
         {buttonText}
-      </a>
+      </button>
     </div>
   );
 }

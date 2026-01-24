@@ -8,6 +8,8 @@ const {
   title = 'Beaver Habit Tracker - Simple habit tracking without goals',
   description = 'A simple habit tracking app without goals. Track your habits with visual streaks, no pressure, just progress.'
 } = Astro.props;
+
+const paddleToken = import.meta.env.PADDLE_CLIENT_SIDE_TOKEN;
 ---
 
 <!doctype html>
@@ -52,6 +54,14 @@ const {
             , "keywords": "habit tracking, tracking habit, habit tracker, daily habits, streaks"
           }
         })}
+      </script>
+      
+      <!-- Paddle Checkout -->
+      <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+      <script define:vars={{ paddleToken }}>
+        Paddle.Initialize({ 
+          token: paddleToken
+        });
       </script>
   </head>
   <body>

@@ -1,5 +1,7 @@
 ---
 import PricingCard from './PricingCard';
+
+const priceId = import.meta.env.PADDLE_PRICE_ID;
 ---
 
 <section class="py-32 px-4">
@@ -37,6 +39,7 @@ import PricingCard from './PricingCard';
         ]}
         buttonText="UPGRADE"
         buttonLink="https://beaverhabits.com/pricing"
+        priceId={priceId}
         isPro={true}
       />
     </div>
