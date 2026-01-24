@@ -10,6 +10,7 @@ const {
 } = Astro.props;
 
 const paddleToken = import.meta.env.PADDLE_CLIENT_SIDE_TOKEN;
+const paddleSandbox = (import.meta.env.PADDLE_SANDBOX ?? 'false');
 ---
 
 <!doctype html>
@@ -58,10 +59,13 @@ const paddleToken = import.meta.env.PADDLE_CLIENT_SIDE_TOKEN;
       
       <!-- Paddle Checkout -->
       <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-      <script define:vars={{ paddleToken }}>
+      <script define:vars={{ paddleToken, paddleSandbox }}>
         Paddle.Initialize({ 
           token: paddleToken
         });
+        if (String(paddleSandbox).toLowerCase() === 'true') {
+          Paddle.Environment.set('sandbox');
+        }
       </script>
   </head>
   <body>
