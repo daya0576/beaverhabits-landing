@@ -60,12 +60,33 @@ const paddleSandbox = (import.meta.env.PADDLE_SANDBOX ?? 'false');
       <!-- Paddle Checkout -->
       <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
       <script define:vars={{ paddleToken, paddleSandbox }}>
-        Paddle.Initialize({ 
-          token: paddleToken
+        // Debug: Print environment variables
+        console.log('[Paddle Config]', {
+          token: paddleToken,
+          sandbox: paddleSandbox,
+          tokenPrefix: paddleToken?.substring(0, 5),
+          origin: window.location.origin
         });
-        if (String(paddleSandbox).toLowerCase() === 'true') {
-          Paddle.Environment.set('sandbox');
-        }
+
+        // Wait for Paddle to load
+        (function() {
+          const initPaddle = () => {
+            if (typeof Paddle !== 'undefined') {
+              console.log('[Paddle] Initializing...');
+              Paddle.Initialize({ 
+                token: paddleToken
+              });
+              if (String(paddleSandbox).toLowerCase() === 'true') {
+                Paddle.Environment.set('sandbox');
+                console.log('[Paddle] Sandbox mode enabled');
+              }
+              console.log('[Paddle] Initialized successfully');
+            } else {
+              setTimeout(initPaddle, 3000);
+            }
+          };
+          initPaddle();
+        })();
       </script>
   </head>
   <body>
