@@ -1,9 +1,10 @@
 ---
+import AnimatedScreenshots from './AnimatedScreenshots.tsx';
 ---
 
 <section class="pt-36 pb-36 px-4">
   <div class="container mx-auto max-w-6xl">
-    <div class="text-center mb-20">
+    <div class="text-center mb-23 ">
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8 leading-snug tracking-tight">
         Simple <span class="text-blue-400">habit tracking</span> app<br />
         <span class="text-blue-400">without 'goals'</span>
@@ -26,16 +27,8 @@
       </div>
     </div>
 
-    <div class="w-full grid grid-cols-1 sm:grid-cols-3 gap-6">
-      <figure class="rounded-3xl shadow-2xl">
-        <img src="/screenshot-1.jpg" alt="Habit list view showing daily tracking" class="w-full h-full object-contain" loading="eager" />
-      </figure>
-      <figure class="rounded-3xl shadow-2xl">
-        <img src="/screenshot-2.jpg" alt="Habit calendar view with streak visualization" class="w-full h-full object-contain" loading="eager" />
-      </figure>
-      <figure class="rounded-3xl shadow-2xl">
-        <img src="/screenshot-3.jpg" alt="Habit statistics and progress tracking" class="w-full h-full object-contain" loading="eager" />
-      </figure>
+    <div class="mt-15">
+      <AnimatedScreenshots client:load />
     </div>
   </div>
 </section>
