@@ -42,20 +42,17 @@ export default function AnimatedScreenshots() {
     };
   }, []);
 
-  // Ensure baseUrl always ends with /
-  const baseUrl = (import.meta.env.BASE_URL || '/').replace(/\/?$/, '/');
-
   const screenshots = [
     {
-      src: `${baseUrl}screenshot-2.jpg`,
+      src: '/pricing/screenshots/screenshot-2.jpg',
       alt: 'Habit calendar view with streak visualization',
     },
     {
-      src: `${baseUrl}screenshot-1.jpg`,
+      src: '/pricing/screenshots/screenshot-1.jpg',
       alt: 'Habit list view showing daily tracking',
     },
     {
-      src: `${baseUrl}screenshot-3.jpg`,
+      src: '/pricing/screenshots/screenshot-3.jpg',
       alt: 'Habit statistics and progress tracking',
     },
   ];
