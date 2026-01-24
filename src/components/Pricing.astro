@@ -1,0 +1,44 @@
+---
+import PricingCard from './PricingCard';
+---
+
+<section class="py-24 px-4">
+  <div class="container mx-auto max-w-6xl">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">Simple, transparent pricing</h2>
+      <p class="text-xl text-gray-400">Start free, upgrade when you're ready</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <PricingCard
+        client:load
+        title="Basic"
+        price="$0"
+        description="Key features"
+        features={[
+          'Add notes/descriptions',
+          'Export & Import',
+          'RESTful API',
+          'Community support'
+        ]}
+        buttonText="GET STARTED"
+        buttonLink="https://beaverhabits.com/gui"
+      />
+      
+      <PricingCard
+        client:load
+        title="Pro"
+        price="$9.90"
+        description="Buy lifetime license"
+        features={[
+          'Unlimited habits',
+          'Organize habits by category',
+          'Daily backup',
+          '14-day policy return'
+        ]}
+        buttonText="UPGRADE"
+        buttonLink="https://beaverhabits.com/pricing"
+        isPro={true}
+      />
+    </div>
+  </div>
+</section>

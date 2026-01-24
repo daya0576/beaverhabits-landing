@@ -1,0 +1,60 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = 'Beaver Habit Tracker - Simple habit tracking without goals',
+  description = 'A simple habit tracking app without goals. Track your habits with visual streaks, no pressure, just progress.'
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="habit tracking, tracking habit, habit tracker, habit tracker app, daily habits, streaks" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+      <link rel="canonical" href="https://beaverhabits.com" />
+      <meta name="robots" content="index, follow" />
+
+      <!-- Open Graph -->
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:url" content="https://beaverhabits.com" />
+      <meta property="og:image" content="/screenshot-1.jpg" />
+
+      <!-- Twitter -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content="/screenshot-1.jpg" />
+
+      <!-- Structured data -->
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "url": "https://beaverhabits.com",
+          "name": title,
+          "description": description,
+          "publisher": {
+            "@type": "Organization",
+            "name": "Beaver Habit Tracker",
+            "url": "https://beaverhabits.com",
+              "logo": { "@type": "ImageObject", "url": "https://beaverhabits.com/favicon.svg" }
+            , "keywords": "habit tracking, tracking habit, habit tracker, daily habits, streaks"
+          }
+        })}
+      </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

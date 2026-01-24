@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: 59 130 246;
+    --color-background: 10 10 10;
+    --color-surface: 23 23 23;
+    --color-surface-hover: 38 38 38;
+  }
+
+  body {
+    @apply bg-[rgb(var(--color-background))] text-gray-100;
+  }
+}
