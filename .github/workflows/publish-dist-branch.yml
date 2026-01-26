@@ -33,6 +33,7 @@ jobs:
         run: npm run build
         env:
           PUBLIC_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PADDLE_CLIENT_SIDE_TOKEN: ${{ secrets.PADDLE_CLIENT_SIDE_TOKEN }}
 
       - name: Publish dist to branch
         uses: peaceiris/actions-gh-pages@v4
