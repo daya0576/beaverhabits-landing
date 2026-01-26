@@ -9,7 +9,7 @@ const {
   description = 'A simple habit tracking app without goals. Track your habits with visual streaks, no pressure, just progress.'
 } = Astro.props;
 
-const paddleToken = import.meta.env.PUBLIC_PADDLE_CLIENT_SIDE_TOKEN;
+const paddleToken = import.meta.env.PADDLE_CLIENT_SIDE_TOKEN;
 const paddleSandbox = (import.meta.env.PADDLE_SANDBOX ?? 'false');
 const isDev = import.meta.env.DEV;
 ---

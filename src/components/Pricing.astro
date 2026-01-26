@@ -1,11 +1,11 @@
 ---
 import PricingCard from './PricingCard';
 
-const priceId = import.meta.env.PUBLIC_PADDLE_PRICE_ID;
+const priceId = import.meta.env.PADDLE_PRICE_ID;
 
 // Debug: Check if env var is loaded during build
 if (!priceId) {
-  console.warn('⚠️ PUBLIC_PADDLE_PRICE_ID is not set - Pro upgrade button may not work');
+  console.warn('⚠️ PADDLE_PRICE_ID is not set - Pro upgrade button may not work');
 }
 ---
 
