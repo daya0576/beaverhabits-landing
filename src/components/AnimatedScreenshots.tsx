@@ -97,7 +97,7 @@ export default function AnimatedScreenshots() {
   return (
     <div
       ref={containerRef}
-      className="w-full grid grid-cols-1 sm:grid-cols-3 gap-3"
+      className="w-full max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-3"
     >
       {screenshots.map((screenshot, index) => {
         const scale = getImageScale(index);
@@ -109,7 +109,7 @@ export default function AnimatedScreenshots() {
         return (
           <figure
             key={index}
-            className="transition-all duration-300 ease-out overflow-hidden"
+            className="transition-all duration-300 ease-out overflow-hidden rounded-lg"
             style={{
               transform: `scale(${scale}) translateY(${yOffset}px) rotate(${rotation}deg)`,
               opacity,
