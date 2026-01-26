@@ -44,15 +44,15 @@ export default function AnimatedScreenshots() {
 
   const screenshots = [
     {
-      src: '/pricing/statics/screenshot-2.jpg',
+      src: '/landing/statics/screenshot-2.jpg',
       alt: 'Habit calendar view with streak visualization',
     },
     {
-      src: '/pricing/statics/screenshot-1.jpg',
+      src: '/landing/statics/screenshot-1.jpg',
       alt: 'Habit list view showing daily tracking',
     },
     {
-      src: '/pricing/statics/screenshot-3.jpg',
+      src: '/landing/statics/screenshot-3.jpg',
       alt: 'Habit statistics and progress tracking',
     },
   ];
