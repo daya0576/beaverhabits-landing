@@ -25,10 +25,14 @@ export default function PricingCard({
       return;
     }
 
+    function getCookie(name: string): string | null {
+      const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      return match ? decodeURIComponent(match[2]) : null;
+    }
+
     try {
-      // Get email from URL params or prompt user
-      const params = new URLSearchParams(window.location.search);
-      const email = params.get('email') || '';
+      // Get email only from cookie
+      const email = getCookie('email') || '';
 
       // Trigger Paddle checkout
       (window as any).Paddle?.Checkout.open({
