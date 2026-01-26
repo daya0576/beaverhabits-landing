@@ -1,5 +1,7 @@
----
 import GitHubStarButton from './GitHubStarButton';
+import { fetchGitHubStars } from '../utils/fetchGitHubStars';
+
+const stars = await fetchGitHubStars();
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-[rgb(var(--color-background))]/80 backdrop-blur-sm border-b border-gray-700/50">
@@ -12,7 +14,7 @@ import GitHubStarButton from './GitHubStarButton';
       <a href="https://github.com/daya0576/beaverhabits/wiki" target="_blank" rel="noopener" class="text-sm sm:text-base text-gray-300 hover:text-white transition-colors">Docs</a>
       
       <!-- GitHub Stars - Hidden on mobile -->
-      <GitHubStarButton client:visible />
+      <GitHubStarButton stars={stars} />
     </nav>
   </div>
 </header>
