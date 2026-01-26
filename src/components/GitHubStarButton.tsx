@@ -4,7 +4,13 @@ export default function GitHubStarButton() {
   const [stars, setStars] = useState<string>('Star');
 
   useEffect(() => {
-    fetch('https://api.github.com/repos/daya0576/beaverhabits')
+    const headers: Record<string, string> = {};
+    const token = import.meta.env.PUBLIC_GITHUB_TOKEN;
+    if (token) {
+      headers['Authorization'] = `token ${token}`;
+    }
+
+    fetch('https://api.github.com/repos/daya0576/beaverhabits', { headers })
       .then(res => res.json())
       .then(data => {
         const count = data.stargazers_count;
