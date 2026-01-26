@@ -3,14 +3,8 @@ type GitHubStarButtonProps = {
 };
 
 const formatStars = (value?: number): string => {
-  if (typeof value !== 'number' || Number.isNaN(value)) {
-    return 'Star';
-  }
-
-  if (value >= 1000) {
-    return `${(value / 1000).toFixed(1)}k`;
-  }
-
+  if (typeof value !== 'number') return 'Star';
+  if (value >= 1000) return `${(value / 1000).toFixed(1)}k`;
   return value.toString();
 };
 

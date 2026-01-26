@@ -1,6 +1,6 @@
 const GITHUB_REPO = 'daya0576/beaverhabits';
 
-const formatHeaders = () => {
+const buildHeaders = () => {
 	const headers: Record<string, string> = {
 		Accept: 'application/vnd.github+json',
 	};
@@ -16,16 +16,14 @@ const formatHeaders = () => {
 export const fetchGitHubStars = async (): Promise<number | undefined> => {
 	try {
 		const response = await fetch(`https://api.github.com/repos/${GITHUB_REPO}`, {
-			headers: formatHeaders(),
+			headers: buildHeaders(),
 		});
 
-		if (!response.ok) {
-			return undefined;
-		}
+		if (!response.ok) return undefined;
 
 		const data = (await response.json()) as { stargazers_count?: number };
 		return typeof data.stargazers_count === 'number' ? data.stargazers_count : undefined;
-	} catch (error) {
+	} catch {
 		return undefined;
 	}
 };
