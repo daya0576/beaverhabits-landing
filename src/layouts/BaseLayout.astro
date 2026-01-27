@@ -42,20 +42,35 @@ const isDev = import.meta.env.DEV;
 
       <!-- Structured data -->
       <script type="application/ld+json">
-        {JSON.stringify({
+        {
           "@context": "https://schema.org",
           "@type": "WebSite",
           "url": "https://beaverhabits.com",
-          "name": title,
-          "description": description,
+          "name": "Beaver Habit Tracker",
+          "description": "A simple habit tracking app without goals",
+          "mainEntity": {
+            "@type": "SoftwareApplication",
+            "name": "Beaver Habit Tracker",
+            "description": "A simple habit tracking app without goals. Track your habits with visual streaks, no pressure, just progress.",
+            "url": "https://beaverhabits.com",
+            "applicationCategory": "LifestyleApplication",
+            "operatingSystem": "Web",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          },
           "publisher": {
             "@type": "Organization",
             "name": "Beaver Habit Tracker",
             "url": "https://beaverhabits.com",
-              "logo": { "@type": "ImageObject", "url": "/landing/statics/favicon.svg" }
-            , "keywords": "habit tracking, tracking habit, habit tracker, daily habits, streaks"
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://beaverhabits.com/landing/statics/favicon.svg"
+            }
           }
-        })}
+        }
       </script>
       
       <!-- Paddle Checkout -->
