@@ -40,36 +40,119 @@ const isDev = import.meta.env.DEV;
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content="/landing/statics/screenshot-1.jpg" />
 
-      <!-- Structured data -->
+      <!-- Structured data - Organization -->
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Beaver Habit Tracker",
+          "url": "https://beaverhabits.com",
+          "logo": "https://beaverhabits.com/landing/statics/favicon.svg",
+          "sameAs": [
+            "https://github.com/daya0576/beaverhabits",
+            "https://twitter.com/beaverhabits",
+            "https://www.youtube.com/@beaverhabits"
+          ],
+          "founder": {
+            "@type": "Person",
+            "name": "Henry Zhu",
+            "jobTitle": "Developer",
+            "url": "https://github.com/daya0576"
+          }
+        }
+      </script>
+
+      <!-- Structured data - WebSite with SearchAction -->
       <script type="application/ld+json">
         {
           "@context": "https://schema.org",
           "@type": "WebSite",
           "url": "https://beaverhabits.com",
           "name": "Beaver Habit Tracker",
-          "description": "A simple habit tracking app without goals",
-          "mainEntity": {
-            "@type": "SoftwareApplication",
-            "name": "Beaver Habit Tracker",
-            "description": "A simple habit tracking app without goals. Track your habits with visual streaks, no pressure, just progress.",
-            "url": "https://beaverhabits.com",
-            "applicationCategory": "LifestyleApplication",
-            "operatingSystem": "Web",
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "USD"
-            }
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Beaver Habit Tracker",
-            "url": "https://beaverhabits.com",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://beaverhabits.com/landing/statics/favicon.svg"
-            }
+          "description": "A simple habit tracking app without goals. Track your habits with visual streaks, no pressure, just progress.",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://beaverhabits.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
           }
+        }
+      </script>
+
+      <!-- Structured data - SoftwareApplication -->
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Beaver Habit Tracker",
+          "description": "A simple habit tracking app without goals. Track your habits with visual streaks, no pressure, just progress.",
+          "url": "https://beaverhabits.com",
+          "applicationCategory": "LifestyleApplication",
+          "operatingSystem": "Web, iOS, Android",
+          "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "USD",
+            "lowPrice": "0",
+            "highPrice": "9.90",
+            "offerCount": "2"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "150",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Henry Zhu",
+            "url": "https://github.com/daya0576"
+          },
+          "screenshot": [
+            "https://beaverhabits.com/landing/statics/screenshot-1.jpg",
+            "https://beaverhabits.com/landing/statics/screenshot-2.jpg",
+            "https://beaverhabits.com/landing/statics/screenshot-3.jpg"
+          ],
+          "featureList": [
+            "Habit tracking without goals",
+            "Visual streak tracking",
+            "Daily backup",
+            "Export & Import",
+            "RESTful API",
+            "Self-hosted option"
+          ]
+        }
+      </script>
+
+      <!-- Structured data - FAQPage -->
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is Beaver Habit Tracker?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Beaver Habit Tracker is a simple habit tracking app without goals. It helps you track your daily habits with visual streaks, focusing on progress rather than pressure."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Beaver Habit Tracker free?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, Beaver Habit Tracker offers a free plan with key features. Pro version with unlimited habits and advanced features is available for $9.90 lifetime license."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I self-host Beaver Habit Tracker?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, Beaver Habit Tracker is open-source and can be self-hosted using Docker. Visit our GitHub repository for installation instructions."
+              }
+            }
+          ]
         }
       </script>
       
