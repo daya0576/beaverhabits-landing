@@ -51,6 +51,16 @@ Landing page for Beaver Habit Tracker SaaS - built with Astro 5, React Islands, 
 - Format: `type: description` (e.g., `feat: add pricing section`)
 - Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
 
+### Git Workflow
+- **This is a submodule** of the main `beaverhabits` repository
+- After accepting code changes, always commit and push:
+  ```bash
+  git add -A
+  git commit -m "your message"
+  git push origin main
+  ```
+- Remind the user to also update the parent repository after pushing submodule changes
+
 ## Vibe Coding Best Practices 2026
 ✨ Currently applying modern development patterns as we build:
 - Ship-to-learn over perfect planning

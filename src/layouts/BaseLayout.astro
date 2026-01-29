@@ -106,6 +106,11 @@ const isDev = import.meta.env.DEV;
           initPaddle();
         })();
       </script>
+
+      <!-- Umami Analytics (Production only) -->
+      {!isDev && (
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="d3e618a1-866a-4625-b59a-9c8f576c7420"></script>
+      )}
   </head>
   <body>
     <slot />
