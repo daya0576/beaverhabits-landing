@@ -4,7 +4,12 @@ import GitHubStarButton from './GitHubStarButton';
 
 <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b border-[rgb(38_38_38)]">
   <div class="container mx-auto px-4 h-14 sm:h-16 flex items-center justify-between">
-    <a href="/" class="text-sm sm:text-xl font-semibold hover:text-gray-300 transition-colors">Beaver Habit Tracker</a>
+    <a href="/" class="flex items-center gap-2 sm:gap-2.5 text-sm sm:text-xl font-semibold hover:text-gray-300 transition-colors group">
+      <div class="w-5 h-5 sm:w-6 sm:h-6 bg-white rounded-md flex items-center justify-center p-0.5 group-hover:bg-gray-100 transition-colors shadow-sm">
+        <img src="/landing/statics/favicon.svg" alt="Beaver Habits Logo" class="w-full h-full" />
+      </div>
+      <span>BeaverHabits</span>
+    </a>
 
     <nav class="flex items-center gap-4">
       <a href="#pricing" class="text-sm sm:text-base text-gray-300 hover:text-white transition-colors">Pricing</a>
