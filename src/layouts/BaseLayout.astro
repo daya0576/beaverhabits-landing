@@ -169,24 +169,40 @@ const isDev = import.meta.env.DEV;
           });
         }
 
-        // Wait for Paddle to load
+        // Wait for Paddle to load without fixed 3s delay
         (function() {
           const initPaddle = () => {
-            if (typeof Paddle !== 'undefined') {
-              if (isDev) console.log('[Paddle] Initializing...');
-              Paddle.Initialize({ 
-                token: paddleToken
-              });
-              if (String(paddleSandbox).toLowerCase() === 'true') {
-                Paddle.Environment.set('sandbox');
-                if (isDev) console.log('[Paddle] Sandbox mode enabled');
-              }
-              if (isDev) console.log('[Paddle] Initialized successfully');
-            } else {
-              setTimeout(initPaddle, 3000);
+            if (isDev) console.log('[Paddle] Initializing...');
+            Paddle.Initialize({ 
+              token: paddleToken
+            });
+            if (String(paddleSandbox).toLowerCase() === 'true') {
+              Paddle.Environment.set('sandbox');
+              if (isDev) console.log('[Paddle] Sandbox mode enabled');
             }
+            if (isDev) console.log('[Paddle] Initialized successfully');
           };
-          initPaddle();
+
+          if (typeof Paddle !== 'undefined') {
+            initPaddle();
+            return;
+          }
+
+          let attempts = 0;
+          const maxAttempts = 50; // ~5s at 100ms
+          const intervalId = setInterval(() => {
+            if (typeof Paddle === 'undefined') {
+              attempts += 1;
+              if (attempts >= maxAttempts) {
+                clearInterval(intervalId);
+                if (isDev) console.warn('[Paddle] Failed to load within 5s');
+              }
+              return;
+            }
+
+            clearInterval(intervalId);
+            initPaddle();
+          }, 100);
         })();
       </script>
 
