@@ -11,36 +11,43 @@ import '../../styles/global.css';
     <article class="w-full max-w-2xl space-y-8 leading-relaxed border border-gray-200 rounded-2xl p-8 sm:p-12">
       <header class="space-y-2">
         <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">Privacy Policy</h1>
-        <p class="text-sm text-gray-400">Beaver Habit Tracker for iOS · Effective April 4, 2026</p>
+        <p class="text-sm text-gray-400">Beaver Habit Tracker for iOS · Effective August 9, 2026</p>
       </header>
 
       <section class="space-y-3">
-        <h2 class="text-lg font-semibold text-gray-900">1. Data Collection</h2>
-        <p class="text-gray-600">Beaver Habit Tracker for iOS stores all habit data locally on your device. We do not collect, transmit, or store any personal information.</p>
+        <h2 class="text-lg font-semibold text-gray-900">1. Local Mode</h2>
+        <p class="text-gray-600">Beaver Habit Tracker works locally by default. In local mode, your habits, completions, reminders, and notes remain on your device. The app does not require an account and does not connect to a default server.</p>
       </section>
 
       <section class="space-y-3">
-        <h2 class="text-lg font-semibold text-gray-900">2. Analytics & Tracking</h2>
-        <p class="text-gray-600">We do not use any third-party analytics, advertising, or tracking SDKs.</p>
+        <h2 class="text-lg font-semibold text-gray-900">2. Optional Self-Hosted Sync</h2>
+        <p class="text-gray-600">If you choose to connect a compatible self-hosted server, the app sends your account authentication information and synchronized habit data to the server address you select. Synchronized data can include habits, tags, reminders, completions, and notes.</p>
+        <p class="text-gray-600">Your password is used to sign in and is not stored by the app. After sign-in, the authentication token is stored in the iOS Keychain. The server operator controls how data stored on that server is processed and retained, so you should review the operator's privacy and security practices.</p>
       </section>
 
       <section class="space-y-3">
-        <h2 class="text-lg font-semibold text-gray-900">3. Data Sharing</h2>
-        <p class="text-gray-600">We do not sell, share, or disclose your data to any third parties.</p>
+        <h2 class="text-lg font-semibold text-gray-900">3. Analytics, Advertising & Tracking</h2>
+        <p class="text-gray-600">We do not use advertising, analytics, or tracking SDKs. We do not sell your personal data. Data is transmitted only when needed for a feature you choose, such as synchronization with your selected self-hosted server.</p>
       </section>
 
       <section class="space-y-3">
-        <h2 class="text-lg font-semibold text-gray-900">4. Data Deletion</h2>
-        <p class="text-gray-600">You can delete all your data at any time by removing the app from your device.</p>
+        <h2 class="text-lg font-semibold text-gray-900">4. Disconnecting & Deleting Data</h2>
+        <p class="text-gray-600">Disconnecting a self-hosted server stops synchronization and removes the saved authentication token from the app, but it does not delete data already stored on that server.</p>
+        <p class="text-gray-600">When connected to a compatible server, you can use Delete Account in the app to permanently disable access and remove your synchronized and personally identifiable account data from that server. A server may retain an anonymous, disabled archival record that cannot be used to sign in or recover your data. This action cannot be undone. Removing the app deletes its local app data from your device, but does not by itself delete an account or data retained by a self-hosted server.</p>
       </section>
 
       <section class="space-y-3">
-        <h2 class="text-lg font-semibold text-gray-900">5. Contact</h2>
+        <h2 class="text-lg font-semibold text-gray-900">5. Security</h2>
+        <p class="text-gray-600">Connections to internet-hosted servers must use HTTPS. The app also supports HTTP connections to servers on your local network for self-hosting. You are responsible for selecting and securing the server you connect to.</p>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-semibold text-gray-900">6. Contact</h2>
         <p class="text-gray-600">If you have questions about this policy, please contact us at <a href="https://github.com/daya0576/beaverhabits/issues" class="text-blue-500 hover:text-blue-600 underline underline-offset-2">GitHub Issues</a>.</p>
       </section>
 
       <section class="space-y-3">
-        <h2 class="text-lg font-semibold text-gray-900">6. Changes</h2>
+        <h2 class="text-lg font-semibold text-gray-900">7. Changes</h2>
         <p class="text-gray-600">We may update this policy from time to time. Changes will be posted on this page.</p>
       </section>
 
