@@ -23,19 +23,24 @@ import '../../styles/global.css';
         </div>
 
         <div class="space-y-3">
-          <h3 class="text-base font-semibold text-gray-900">1.2 Optional Self-Hosted Sync</h3>
+          <h3 class="text-base font-semibold text-gray-900">1.2 Optional iCloud Sync (Subscription)</h3>
+          <p class="text-gray-600">If you enable iCloud sync, you must purchase an auto-renewing subscription through the App Store. Payment is processed by Apple; we do not receive your payment card details. When subscribed, your habits, completions, reminders, and notes are stored in your personal iCloud account so they can appear on your other Apple devices. You can turn iCloud sync off at any time; the app then keeps working from the local copy on that device. Manage or cancel the subscription in your Apple ID account settings.</p>
+        </div>
+
+        <div class="space-y-3">
+          <h3 class="text-base font-semibold text-gray-900">1.3 Optional Self-Hosted Sync</h3>
           <p class="text-gray-600">If you connect a compatible self-hosted server, the app sends your account credentials and synchronized data (habits, tags, reminders, completions, and notes) to the server you select. Your password is not stored; after sign-in, the authentication token is kept in the iOS Keychain. The server operator controls how that data is processed and retained.</p>
         </div>
       </section>
 
       <section class="space-y-3">
         <h2 class="text-lg font-semibold text-gray-900">2. Analytics, Advertising & Tracking</h2>
-        <p class="text-gray-600">We do not use advertising, analytics, or tracking SDKs. We do not sell your personal data. Data is transmitted only when needed for a feature you choose, such as synchronization with your selected self-hosted server.</p>
+        <p class="text-gray-600">We do not use advertising, analytics, or tracking SDKs. We do not sell your personal data. Data is transmitted only when needed for a feature you choose, such as iCloud sync or synchronization with your selected self-hosted server.</p>
       </section>
 
       <section class="space-y-3">
         <h2 class="text-lg font-semibold text-gray-900">3. Disconnecting & Deleting Data</h2>
-        <p class="text-gray-600">Disconnecting a self-hosted server stops synchronization and removes the saved authentication token from the app, but it does not delete data already stored on that server.</p>
+        <p class="text-gray-600">Turning off iCloud sync keeps a local copy on this device and stops updating the iCloud document from this app. Disconnecting a self-hosted server stops synchronization and removes the saved authentication token from the app, but it does not delete data already stored on that server.</p>
         <p class="text-gray-600">When connected to a compatible server, you can use Delete Account in the app to permanently disable access and remove your synchronized and personally identifiable account data from that server. A server may retain an anonymous, disabled archival record that cannot be used to sign in or recover your data. This action cannot be undone. Removing the app deletes its local app data from your device, but does not by itself delete an account or data retained by a self-hosted server.</p>
       </section>
 
